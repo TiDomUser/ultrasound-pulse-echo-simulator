@@ -31,20 +31,13 @@ System Architecture
 The ultrasound pulse-echo simulator follows a modular functional architecture that separates physical modelling, signal generation, signal conditioning, digital signal processing, and numerical verification.
 
 flowchart TD
-    A[⚙️ Physical and Simulation Parameters] --> B[🔊 Ultrasound Pulse Generation]
-    B --> C[🌊 Acoustic Propagation and Reflection]
-    C --> D[📉 Acoustic Attenuation]
-    D --> E[🎛️ Additive Gaussian Noise]
-    E --> F[📻 Received RF Signal]
-    F --> G[🎚️ Optional TGC]
-    G --> H[🔄 Hilbert Transform]
-    H --> I[📈 Envelope Extraction]
-    I --> J[📍 Peak Detection]
-    J --> K[⏱️ Time-of-Flight Estimation]
-    K --> L[📏 Depth Estimation]
-    L --> M[📊 Comparison with Ground Truth]
-    M --> N[🧮 Performance Metrics]
-    N --> O[🖼️ Scientific Visualization]
+    A[Simulation Parameters] --> B[Pulse Generation]
+    B --> C[Acoustic Propagation]
+    C --> D[Received RF Signal]
+    D --> E[Hilbert Envelope]
+    E --> F[Peak Detection]
+    F --> G[Depth Estimation]
+    G --> H[Numerical Verification]
 
 The simulator's internal structure is categorized into six functional subsystems, mapping parameters directly to quantitative outputs:
 Subsystem	Input	Output	Primary Function
