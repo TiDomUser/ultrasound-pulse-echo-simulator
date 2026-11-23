@@ -97,10 +97,12 @@ Additive white Gaussian noise (AWGN) is used to evaluate the robustness and repe
 Noise variance is determined from the nominal signal-to-noise ratio (SNR) and the global mean-square power of the simulated RF signal.
 Random number generation is controlled through predefined seeds to support reproducibility.
 The nominal global SNR should not be interpreted as the local SNR of individual acoustic echoes.
+
 Time Gain Compensation
 An optional time gain compensation (TGC) stage applies depth-dependent amplification to investigate amplitude recovery following acoustic attenuation.
 Although the theoretical compensation function represents the inverse of the implemented attenuation factor, practical amplitude recovery is affected by noise amplification and signal estimation procedures.
 Further numerical verification is required to establish the performance of the implemented compensation stage.
+
 Reference Simulation Parameters
 Parameter	Reference value
 Central frequency	5 MHz
@@ -116,5 +118,35 @@ Acoustic attenuation coefficient	0.5 dB/(cm·MHz)
 Noise distribution	Additive white Gaussian
 Monte Carlo random seed	2026
 The reference configuration is modified according to the objectives of each numerical experiment.
+
 Model Scope
 The physical model is intended for educational purposes, numerical verification, and preliminary biomedical signal processing investigations.
+
+## Reproducibility
+
+### Requirements
+
+- Python 3
+- NumPy
+- SciPy
+- Matplotlib
+- Pandas
+
+### Running the Simulation
+
+1. Clone or download this repository.
+2. Install dependencies:
+
+   pip install -r requirements.txt
+
+3. Open `ultrasound_simulator.ipynb` in Jupyter
+   Notebook or Google Colab.
+4. Execute all cells sequentially.
+5. Review the generated figures and numerical results.
+
+### Notes
+
+Random seeds are defined for reproducibility.
+Results may vary slightly across computational environments.
+
+The TGC implementation remains under numerical review.
